@@ -61,7 +61,7 @@ public class BluetoothCommunication implements Runnable {
                 mainActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(mainActivity, "Try to Reconnect", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mainActivity, "Incompatible Device", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
