@@ -22,6 +22,7 @@ import android.widget.ListView;
 
 import com.example.bluetooth_remote_control_for_arduino.MainActivity2;
 import com.example.bluetooth_remote_control_for_arduino.R;
+import com.example.bluetooth_remote_control_for_arduino.StreamManager;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -44,7 +45,6 @@ public class ConnectionMainActivity extends AppCompatActivity {
 
     // Connected device
     List<BTDevice> btDeviceList = new ArrayList<>();
-    ;
     String deviceMacAddr;
     String deviceName;
 
@@ -143,6 +143,7 @@ public class ConnectionMainActivity extends AppCompatActivity {
 
     public void openJoyStickActivity() throws InterruptedException {
         bluetoothSocketConnection.join();
+        StreamManager.getInstance().setOutputStream(outputStream);
         Intent intent = new Intent(this, MainActivity2.class);
         startActivity(intent);
     }
